@@ -1,0 +1,75 @@
+                String time = String.format("%d:%02d:%02d", hours, minutes, secs);
+                handler.postDelayed(this, 1000);
+                int hours = seconds / 3600;
+                int minutes = (seconds % 3600) / 60;
+                int secs = seconds % 60;
+            public void run() {
+            sth = savedInstanceState.getBoolean("key");
+            sth = savedInstanceState.getInt("key");
+        Button sth = (Button) findViewById(R.id.sth);
+        CheckBox sth = (CheckBox) findViewById(R.id.sth);
+        EditText sth = (EditText) findViewById(R.id.sth);
+        ImageButton sth = (ImageButton) findViewById(R.id.sth);
+        ImageView sth = (ImageView) findViewById(R.id.sth);
+        Intent chooserIntent = Intent.createChooser(intent, "Send message...");
+        Intent chooserIntent = Intent.createChooser(intent, chooserTitle);
+        Intent intent = getIntent();
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        Intent intent = new Intent(Intent.ACTION_EDIT);
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+        Intent intent = new Intent(this, Target.class);
+        ListView sth = (ListView) findViewById(R.id.sth);
+        Log.d(tag, "something-to-log");
+        Log.e(tag, "something-to-log");
+        Log.i(tag, "something-to-log");
+        Log.v(tag, "something-to-log");
+        Log.w(tag, "something-to-log");
+        RadioButton sth = (RadioButton) findViewById(R.id.sth);
+        ScrollView sth = (ScrollView) findViewById(R.id.sth);
+        Spinner sth = (Spinner) findViewById(R.id.sth);
+        String chooserTitle = "";
+        String selectedItem = String.valueOf(spinner.getSelectedItem());
+        String sth = editText.getText().toString();
+        String sth = intent.getStringExtra(EXTRA_MESSAGE);
+        Switch sth = (Switch) findViewById(R.id.sth);
+        TextView sth = (TextView) findViewById(R.id.sth);
+        Toast sth = (Toast) findViewById(R.id.sth);
+        ToggleButton sth = (ToggleButton) findViewById(R.id.sth);
+        double sth = intent.getDoubleExtra("name", default_value);
+        final Handler handler = new Handler();
+        handler.post(new Runnable() {
+        if(savedInstanceState != null) {
+        imageView.setImageResource(R.drawable.imageName);
+        int sth = intent.getIntExtra("name", default_value);
+        intent.putExtra(Intent.EXTRA_TEXT, sth);
+        intent.putExtra(key, value);
+        intent.setType("image/*");
+        intent.setType("text/plain");
+        savedInstanceState.putBoolean("key", value);
+        savedInstanceState.putInt("key", value);
+        setContentView(R.layout.activity_main);
+        startActivity(chooserIntent);
+        startActivity(intent);
+        super.onCreate(savedInstanceState);
+        super.onDestroy();
+        super.onPause();
+        super.onRestart();
+        super.onResume();
+        super.onStart();
+        super.onStop();
+        textView.setText("");
+        view.setBackgroundColor(0xFF0000FF);
+        view.setBackgroundColor(0xFF00FF00);
+        view.setBackgroundColor(0xFFFF0000);
+    String tag = "";
+    protected void onClickDoSomething(View view) {
+    protected void onCreate(Bundle savedInstanceState) {
+    protected void onDestroy() {
+    protected void onPause() {
+    protected void onRestart() {
+    protected void onResume() {
+    protected void onStart() {
+    protected void onStop() {
+    public static final String EXTRA_MESSAGE = "";
+public class MainActivity extends Activity {

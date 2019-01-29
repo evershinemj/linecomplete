@@ -1,0 +1,43 @@
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*"/>
+                <data android:mimeType="image/*"/>
+                <data android:mimeType="text/plain"/>
+            <intent-filter>
+        <activity android:name=".SomeActivity">
+        android:alignLeft=""
+        android:entries="@array/"
+        android:id="@+id/"
+        android:layout_alignLeft="@id/"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="dp"
+        android:layout_marginTop="dp"
+        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:onClick=""
+        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingBottom="16dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="16dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="16dp"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="16dp"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:src="@drawable/"
+        android:text="@string/"
+        android:textSize="30dp"
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <item></item>
+    <string name=""></string>
+    <string-array name="">
+<?xml version="1.0" encoding="utf-8"?>

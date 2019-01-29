@@ -1,0 +1,28 @@
+from bs4 import BeautifulSoup
+import numpy
+import numpy as np
+from copy import deepcopy
+from functools import partial
+from functools import total_ordering
+from itertools import chain
+from math import *
+from os import *
+from os.path import *
+from re import *
+from sys import *
+from urllib.request import urlopen
+import copy
+import csv
+import functools
+import html
+import itertools
+import json
+import math
+import mysql.connector
+import mysql.connector as mc
+import os
+import os.path
+import re
+import requests
+import sys
+import xml

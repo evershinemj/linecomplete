@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd" >
+        http://www.springframework.org/schema/beans/spring-beans.xsd" 
+    default-init-method="" default-destroy-method="">
+    <import resource=""/>
+    <bean id="" class="">
+    <bean id="" class="" scope="singleton">
+    <bean id="" class="" scope="prototype">
+    <bean id="" class="" init-method="">
+    <bean id="" class="" destroy-method="">
+    <bean id="" class="" factory-method="">
+    <bean id="" factory-bean="" factory-method=""/>
+    <bean id="" class="" lazy-init="true"/>
+    </bean>
+    <property name="" ref="">
+    </property>
+    <property name="" ref=""/>
+    <property name="" value=""/>
+    <constructor-arg name="" ref="">
+    </constructor-arg>
+    <constructor-arg ref=""/>
+    <constructor-arg type="int" value=""/>
+    <constructor-arg type="java.lang.String" value=""/>
+    <constructor-arg index="" value=""/>
+    <constructor-arg name="" value=""/>
+</beans>
