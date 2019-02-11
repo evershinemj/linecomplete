@@ -1,0 +1,3 @@
+            Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+            sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);

@@ -1,0 +1,23 @@
+                .getRequestDispatcher(dispatchUrl);
+            RequestDispatcher rd = request
+            rd.forward(request, response);
+            filterChain.doFilter(request, response);
+        String action = uri.substring(lastIndex + 1);
+        String dispatchUrl = null;
+        if ("sth".equals(action)) {
+        if (dispatchUrl != null) {
+        int lastIndex = uri.lastIndexOf("/");
+        } else if ("sth".equals(action)) {
+    private JButton jButton = new JButton();
+    private JCheckBox jCheckBox = new JCheckBox();
+    private JPanel jPanel = new JPanel();
+    private JPasswordField jPasswordField = new JPasswordField();
+    private JProgressBar jProgressBar = new JProgressBar();
+    private JRadioButton jRadioButton = new JRadioButton();
+    private JSlider jSlider = new JSlider();
+    private JTextArea jTextArea = new JTextArea();
+    private JTooltip jTooltip = new JTooltip();
+    private jTextField jTextField = new jTextField();
+    public void service(ServletRequest req, ServletResponse resp) {
+@WebServlet(name = "ControllerServlet", urlPatterns = {
+public class MyFrame extends JFrame {
