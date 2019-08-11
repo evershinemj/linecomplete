@@ -20,8 +20,18 @@
         ArrayAdapter<T> listAdapter = new ArrayAdapter<T>(
         AssetManager assetManager = getAssets();
         Button sth = (Button) findViewById(R.id.sth);
+        String name = cursor.getString(0);
+        int imageResource = cursor.getInt(2);
         CharSequence text = "";
         CheckBox sth = (CheckBox) findViewById(R.id.sth);
+        ContentValues drinkValues = new ContentValues();
+        Cursor cursor = db.query("DRINK", new String[] {"AVG(PRICE) AS price"}, null, null, null, null, null);
+        Cursor cursor = db.query("DRINK", new String[] {"COUNT(_id) AS count"}, null, null, null, null, null);
+        Cursor cursor = db.query("DRINK", new String[] {"NAME", "DESCRIPTION"}, "NAME = ? OR DESCRIPTION = ?", new String[] {"Latte", "Our best drip coffee"}, null, null, null);
+        Cursor cursor = db.query("DRINK", new String[] {"NAME", "DESCRIPTION"}, "NAME = ?", new String[] {"Latte"}, null, null, null);
+        Cursor cursor = db.query("DRINK", new String[] {"NAME", "DESCRIPTION"}, "_id = ?", new String[] {Integer.toString(1)}, null, null, null);
+        Cursor cursor = db.query("DRINK", new String[] {"_id", "NAME", "FAVORITE"}, null, null, null, null, "FAVORITE DESC, NAME");
+        Cursor cursor = db.query("DRINK", new String[] {"_id", "NAME", "FAVORITE"}, null, null, null, null, "NAME ASC");
         EditText sth = (EditText) findViewById(R.id.sth);
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         ImageButton sth = (ImageButton) findViewById(R.id.sth);
@@ -44,6 +54,9 @@
         Log.w(tag, "something-to-log");
         RadioButton sth = (RadioButton) findViewById(R.id.sth);
         RadioGroup sth = (RadioGroup) findViewById(R.id.sth);
+        SQLiteDatabase db = sQLiteOpenHelper.getReadableDatabase();
+        SQLiteDatabase db = sQLiteOpenHelper.getWritableDatabase();
+        SQLiteOpenHelper sQLiteOpenHelper = new SQLiteOpenHelper(this);
         ScrollView sth = (ScrollView) findViewById(R.id.sth);
         SomeFragment fragment = (SomeFragment) getFragmentManager().findFragmentById(R.id.fragment_id);
         Spinner sth = (Spinner) findViewById(R.id.sth);
@@ -60,6 +73,13 @@
         View view = getView();
         boolean on = ((ToggleButton) view).isChecked();
         button.setOnClickListener(new View.OnClickListener() {
+        db.delete("DRINK", "NAME = ?", new String[] {"Latte"});
+        db.execSQL("ALTER TABLE DRINK ADD COLUMN FAVORITE NUMERIC;");
+        db.execSQL("CREATE TABLE DRINK ("
+        db.insert("DRINK", null, drinkValues);
+        db.update("DRINK", drinkValues, "NAME = ? OR DESCRIPTION = ?", new String[] {"Latte", "Our best drip coffee"});
+        db.update("DRINK", drinkValues, "NAME = ?", new String[] {"Latte"});
+        db.update("DRINK", drinkValues, "_id = ?", new String[] {Integer.toString(1)});
         double sth = intent.getDoubleExtra("name", default_value);
         final Handler handler = new Handler();
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.foo);
@@ -70,7 +90,13 @@
         getFileAsset(fileName);
         handler.post(new Runnable() {
         if (DEBUG) {
+        if (cursor.moveToFirst()) {
+        if (cursor.moveToLast()) {
+        if (cursor.moveToNext()) {
+        if (cursor.moveToPrevious()) {
         if (id == -1) {
+        if (oldVersion < 1) {
+        if (oldVersion == 1) {
         if (view != null) {
         if(savedInstanceState != null) {
         imageView.setImageResource(R.drawable.imageName);
@@ -107,6 +133,8 @@
         setListAdapter(listAdapter);
         startActivity(chooserIntent);
         startActivity(intent);
+        super(context, DB_NAME, null, DB_VERSION);
+        super.onAttach(activity);
         super.onCreate(savedInstanceState);
         super.onDestroy();
         super.onPause();
@@ -117,10 +145,14 @@
         switch(id) {
         textView.setText("");
         toast.show();
+        updateMyDatabase(db, 0, DB_VERSION);
         view.setBackgroundColor(0xFF0000FF);
         view.setBackgroundColor(0xFF00FF00);
         view.setBackgroundColor(0xFFFF0000);
+    StarbuzzDatabaseHelper(Context context {
     String tag = "";
+    private static final String DB_NAME = "starbuzz";
+    private static final int DB_VERSION = 1;
     protected void onClickDoSomething(View view) {
     protected void onCreate(Bundle savedInstanceState) {
     protected void onDestroy() {
@@ -132,10 +164,12 @@
     public InputStream getFileAsset(String fileName) {
     public static final String EXTRA_MESSAGE = "";
     public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onCreate(SQLiteDatabase db) {
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     public void onListItemClick(ListView listView, View itemView, int position, long id) {
     public void onSaveInstanceState(Bundle savedInstanceState) {
     public void onToggleClicked(View view) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 public class MainActivity extends Activity {
 public class SomeFragment extends Fragment {
 public class SomeListActivity extends ListActivity {

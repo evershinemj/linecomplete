@@ -1,4 +1,108 @@
-ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring-config.xml"});
-Product product = context.getBean("product", Product.class);
-        ApplicationContext context =
+                            int rowNum) throws SQLException {
+        BasicDataSource basicDataSource = (BasicDataSource) jdbcTemplate.getDataSource();
+                        user.setUserId(rs.getInt("user_id"));
+                        user.setUserName(userName);
+                    public Employee mapRow(ResultSet rs,
+                    public void processRow(ResultSet rs) throws SQLException {
+                "from employee where id=?",
+                "select id, firstname, lastname, salary " +
                 new ClassPathXmlApplicationContext(new String[] {"spring-config.xml"});
+                new RowCallbackHandler() {
+                new RowMapper<Employee>() {
+            "META-INF/spring/knight.xml");
+            Connection conn = DataSourceUtils.getConnection(jdbcTemplate.getDataSource());
+            env.getProperty("disc.title"),
+            env.getPropertyAsClass("disc.class", CompactDisc.class);
+            env.getRequiredProperty("disc.title"),
+            sia.knights.config.KnightConfig.class);
+        ApplicationContext context =
+        ApplicationContext context = new AnnotationConfigApplicationContext(
+        ApplicationContext context = new AnnotationConfigApplicationContext(Beans.class);
+        ApplicationContext context = new ClassPathXmlApplicationContext("knight.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring-config.xml"});
+        ApplicationContext context = new GenericGroovyApplicationContext("classpath:com/smart/context/groovy-beans.groovy");
+        Class<CompactDisc> cdClass =
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+        InputStream inputStream = resource.getInputStream();
+        InputStream inputStream = writableResource.getInputStream();
+        LocalDate localDate = context.getBean("localDate", java.time.LocalDate.class);
+        Object[] args = {  };
+        OutputStream outputStream = writableResource.getOutputStream();
+        Product product = context.getBean("product", Product.class);
+        Resource resource = new ClassPathResource("conf/file1.txt");
+        Resource resources[] = resourcePatternResolver.getResources("classpath*:com/smart/**/*.xml");
+        ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+        String filePath = "~/masterSpring/code/chapter4/src/main/resources/conf/file1.txt";
+        UniqueThing thing1 = context.getBean(UniqueThing.class);
+        UniqueThing thing2 = context.getBean(UniqueThing.class);
+        WritableResource writableResource = new PathResource(filePath);
+        assertSame(thing1, thing2);
+        assertTrue(context.containsBean("magicBean"));
+        boolean titleExists = env.containsProperty("disc.title");
+        context.close();
+        env.getProperty("db.connection.count", Integer.class, 30);
+        final User user = new User();
+        jdbcTemplate.query(QUERY_BY_USERNAME, new Object[] { userName },
+        jdbcTemplate.update(INSERT_LOGIN_LOG_SQL, args);
+        return jdbcTemplate.queryForObject(
+        return new SgtPeppers();
+        return user;
+       hibernateTemplate.clear();
+       hibernateTemplate.flush();
+    @ActiveProfiles("dev")
+    @ActiveProfiles("prod")
+    @Bean(name="lonelyHeartsClubBand")
+    @ContextConfiguration("classpath:placeholder-config.xml")
+    @ContextConfiguration("classpath:scoped-beans.xml")
+    @ContextConfiguration(classes=ComponentScannedConfig.class)
+    @ContextConfiguration(classes=ExplicitConfig.class)
+    @Profile("dev")
+    @Profile("prod")
+    @Size(min=2, max=30, message="{firstName.size}")
+    @Size(min=2, max=30, message="{lastName.size}")
+    @Size(min=5, max=16, message="{username.size}")
+    @Size(min=5, max=25, message="{password.size}")
+    Environment env;
+    assertTrue(context.containsBean("magicBean"));
+    private ApplicationContext context;
+    private JdbcOperations jdbc;
+    private JdbcTemplate jdbcTemplate;
+    private static final String QUERY_BY_USERNAME = "SELECT 
+    public  HibernateTemplate hibernateTemplate;
+    public CompactDisc sgtPeppers() {
+    public Employee getEmployeeById(long id) {
+    public static class ComponentScannedScopedBeanTest {
+    public static class ExplicitConfigScopedBeanTest {
+    public static class XMLConfigScopedBeanTest {
+    public user findUserByUserName(final String userName) {
+    public void afterPropertiesSet() throws Exception {
+    public void destroy() throws Exception {
+    public void insertLoginLog(LoginLog loginLog) {
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+    public void setBeanName(String beanName) {
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+  @Value("${example.property}")
+@ActiveProfiles("dev")
+@Autowired(required=false)
+@Component("lonelyHeartsClub")
+@ComponentScan("soundsystem")
+@ComponentScan(basePackageClasses={CDPlayer.class, DVDPlayer.class})
+@ComponentScan(basePackages="soundsystem")
+@ComponentScan(basePackages={"soundsystem", "video"})
+@ContextConfiguration(classes=CDPlayerConfig.class)
+@ContextConfiguration(locations="classpath:META-INF/spring/soundsystem.xml")
+@Import(CDPlayerConfig.class)
+@ImportResource("classpath:cd-config.xml")
+@Named("lonelyHeartsClub")
+@Profile("dev")
+@Profile("prod")
+@PropertySource("classpath:/com/soundsystem/app.properties")
+@Qualifier("cold")
+@Qualifier("iceCream")
+@Runwith(SpringJUnit4ClassRunner.class)
+@Runwith(SpringRunner.class)
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+package soundsystem.collections;
+package soundsystem.properties;
+public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean {
+public interface ReadingListRepository extends JpaRepository<Book, Long> {

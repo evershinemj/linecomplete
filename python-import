@@ -1,17 +1,23 @@
 from bs4 import BeautifulSoup
-from http.client import HTTPResponse
 from collections import deque
 from copy import deepcopy
 from datetime import date
 from datetime import datetime
+from flask import Flask, render_template, request
 from functools import partial
 from functools import total_ordering
+from http.client import HTTPResponse
 from itertools import chain
 from math import *
+from math import log
 from os import *
 from os.path import *
+from pymongo import MongoClient
+from queue import Queue
 from re import *
+from redis import Redis
 from sys import *
+from thread import Thread
 from urllib.request import urlopen
 from xml.etree.ElementTree import Element
 from xml.etree.ElementTree import parse
@@ -32,3 +38,4 @@ import re
 import requests
 import sys
 import xml
+import pymongo

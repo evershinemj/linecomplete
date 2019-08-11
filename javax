@@ -1,13 +1,50 @@
+                    request.getRequestDispatcher(dispatchUrl);
+public class PastValidatorForTemporal implements ConstraintValidator<Past, Temporal> {
+    public boolean isValid(Temporal temporal, ConstraintValidatorContext constraintValidatorContext) {
                 .getRequestDispatcher(dispatchUrl);
+                product.setPrice(new BigDecimal(productForm.getPrice()));
+            HttpServletResponse response)
+            RequestDispatcher rd =
             RequestDispatcher rd = request
-            rd.forward(request, response);
+            SaveProductAction saveProductAction = new SaveProductAction();
+            dispatchUrl = "/jsp/ProductDetails.jsp";
+            dispatchUrl = "/jsp/ProductForm.jsp";
             filterChain.doFilter(request, response);
+            product.setDescription(productForm.getDescription());
+            product.setName(productForm.getName());
+            productForm.setName(request.getParameter("name"));
+            productForm.setPrice(request.getParameter("price"));
+            rd.forward(request, response);
+            request.setAttribute("product", product);
+            saveProductAction.save(product);
+            throws IOException, ServletException {
+        Bindings scope = engine.createBindings();
+        Object result = engine.eval(reader);
+        Object result = engine.eval(scriptString);
         String action = uri.substring(lastIndex + 1);
         String dispatchUrl = null;
+        String uri = request.getRequestURI();
+        engine.eval("function greet(how, whom) { return how + ', ' + whom + '!' }");
+        engine.eval(scriptString, scope);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("ButtonTest");
+        frame.setVisible(true);
+        if ("input-product".equals(action)) {
         if ("sth".equals(action)) {
         if (dispatchUrl != null) {
         int lastIndex = uri.lastIndexOf("/");
+        panel.setBackground(Color.BLUE);
+        process(request, response);
+        result = ((Invocable) engine).invokeFunction("greet", "Hey", "Jack");
+        scrope.put("b", new JButton());
+        setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+        } else if ("save-product".equals(action)) {
         } else if ("sth".equals(action)) {
+    @Column(name = "license_id", nullable = false)
+    @Column(name = "organization_id", nullable = false)
+    @Column(name = "product_name", nullable = false)
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Size(min=2, max=30)
     private JButton jButton = new JButton();
     private JCheckBox jCheckBox = new JCheckBox();
     private JPanel jPanel = new JPanel();
@@ -18,6 +55,12 @@
     private JTextArea jTextArea = new JTextArea();
     private JTooltip jTooltip = new JTooltip();
     private jTextField jTextField = new jTextField();
+    private static final int DEFAULT_HEIGHT = 200;
+    private static final int DEFAULT_WIDTH = 300;
+    public void doPost(HttpServletRequest request,
     public void service(ServletRequest req, ServletResponse resp) {
+@Table(name = "licenses")
+@WebFilter(filterName = "DispatcherFilter", urlPatterns = { "/*" })
 @WebServlet(name = "ControllerServlet", urlPatterns = {
+public class ControllerServlet extends HttpServlet {
 public class MyFrame extends JFrame {

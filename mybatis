@@ -1,3 +1,69 @@
+            "/generator/generatorConfig.xml");
+        for (String warning : warnings) {
+            System.out.println(warning);
+            = new MyBatisGenerator(config, callback, warnings);
+            Assert.assertEquals("admin", user.getUserName());
+            Assert.assertEquals("test@mybatis.tk", user.getUserEmail());
+            Assert.assertEquals(1, result);
+            Assert.assertEquals(1, userMapper.deleteById(1L));
+            Assert.assertNotNull(user);
+            Assert.assertNotNull(userList);
+            Assert.assertNull(user);
+            Assert.assertNull(user.getId());
+            Assert.assertNull(userMapper.selectById(1L));
+            Assert.assertTrue(userList.size() == 0);
+            Assert.assertTrue(userList.size() > 0);
+            List<SysUser> userList = userMapper.selectAll();
+            List<SysUser> userList = userMapper.selectByUser(query);
             Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
-        SqlSession sqlSession = sqlSessionFactory.openSession();
+            SysUser query = new SysUser();
+            SysUser user = new SysUser();
+            SysUser user1 = userMapper.selectById(1L);
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            int result = userMapper.insert(user);
+            int result = userMapper.updateById(user);
+            int result = userMapper.updateByIdSelective(user);
+            query.setId(1L);
+            query.setUserEmail("test@mybatis.tk");
+            query.setUserName("admin");
+            sqlSession.close();
+            sqlSession.rollback();
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+            user = userMapper.selectById(1L);
+            user = userMapper.selectById(user.getId());
+            user = userMapper.selectByIdOrUserName(query);
+            user.setCreateTime(new Date());
+            user.setHeadImg(new byte[]{1,2,3});
+            user.setId(1L);
+            user.setUserEmail("test@mybatis.tk");
+            user.setUserInfo("test info");
+            user.setUserName("test1");
+            user.setUserPassword("123456");
+        // AMBIGUOUS SELECT ID BUG
+        @Result(property = "createBy", column = "created_by"),
+        @Result(property = "createTime", column = "create_time"),
+        @Result(property = "enabled", column = "enabled"),
+        @Result(property = "id", column = "id", id = true),
+        @Result(property = "roleName", column = "role_name"),
+        Configuration config = cp.parseConfiguration(is);
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        InputStream is = Generator.class.getResourceAsStream(
+        MyBatisGenerator myBatisGenerator
+        SqlSession sqlSession = getSqlSession();
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        myBatisGenerator.generate(null);
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @ResultMap("roleResultMap")
+    @Results(id = "roleResultMap", value = {
+    @Select("select * from sys_role")
+    @Select("select id, role_name, enabled, created_by, create_time from sys_role where id = #{id}")
+    List<SysRole> selectAll();
+    List<SysUser> selectAll();
+    SysRole selectById(Long id);
+    SysUser selectById(Long id);
+    int deleteById(Long id);
+    int insert(SysUser sysUser);
+    int updateById(SysUser sysUser);
+    public void testSelectAll() {
+    public void testSelectById() {
+public interface UserMapper {

@@ -1,11 +1,4 @@
-import org.junit.Test;
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.After;
-import org.junit.BeforeClass;
-import org.junit.AfterClass;
-import org.junit.runner.JUnitCore;
-import org.junit.runner.Runwith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+@RunWith(Suite.class)
 @RunWith(value=Parameterized.class)
+@SuiteClasses({ CalculatorTest.class, MathUtilTest.class })
+public class AllTests {
