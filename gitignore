@@ -1,0 +1,8 @@
+### NetBeans ###
+### IntelliJ IDEA ###
+### STS ###
+.classpath
+.project
+.settings
+/build/
+.idea

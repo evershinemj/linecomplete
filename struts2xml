@@ -1,0 +1,17 @@
+			<interceptor name="checkLogin" class="tmq.interceptor.LoginInterceptor" />
+			<result name="login">/login.jsp</result>
+			<result name="success">/index.jsp</result>
+		<action name="checkLogin" class="act.LoginAction" method="checkLogin">
+            <param name="location">/loginSuccess.jsp</param>
+            <param name="password">${password}</param>
+            <param name="username">${username}</param>
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        <result name="exception">/exception.jsp</result>
+        <result type="redirect">
+        <result type="redirectAction">
+            <param name="actionName">login</param>
+            <param name="namespace">/login</param>
+    <include file="struts-default.xml"/>
+    <package name="struts2_login" extends="struts-default" namespace="/login">
+<!DOCTYPE struts PUBLIC

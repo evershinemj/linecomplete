@@ -1,0 +1,11 @@
+        self.client = MongoClient()
+        self.rows = self.collection.find({"deleted": 0}, {"_id": 0})
+        self.collection = self.database.collection1
+        self.database = self.client.database1
+    print(row)
+class DataBaseManager(object):
+client = MongoClient()
+collection = database.collection1
+database = client.database1
+for row in rows:
+rows = collection.find({"age": {"$lte": 100}})

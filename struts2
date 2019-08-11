@@ -1,0 +1,9 @@
+        return SUCCESS;
+public class LoginInterceptor extends AbstractInterceptor {
+    public String intercept(ActionInvocation ai) throws Exception {
+        	 return ai.invoke();
+    	          ActionContext ac = ai.getInvocationContext();
+    	         return Action.LOGIN;
+        Map session = ai.getInvocationContext().getSession();
+    public String execute(){
+public class DefaultAction extends ActionSupport{

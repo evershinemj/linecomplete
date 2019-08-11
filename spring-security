@@ -1,0 +1,11 @@
+        auth.userDetailsService(new UserDetailsService()) {
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_READER"));
+        throw new UsernameNotFoundException("User '" + username + "' not found.");
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    public boolean isEnabled() {
+    public boolean isCredentialsNonExpired() {
+    public boolean isAccountNonExpired() {
+    public boolean isAccountNonLocked() {
+    protected void configure(HttpSecurity http) throws Exception {
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {

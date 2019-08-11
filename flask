@@ -1,0 +1,5 @@
+@app.route('/')
+@app.route('/add', methods=['POST'])
+    return render_template('index.html', data_list=data_list)
+@app.route('/update', methods=['POST'])
+@app.route('/delete/<people_id>', methods=['GET'])

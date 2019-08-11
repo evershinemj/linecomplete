@@ -1,0 +1,169 @@
+		model.addAttribute(new Employee());
+	            "secret".equals(login.getPassword())) {
+	        HttpServletResponse response, Model model) {
+	        session.setAttribute("loggedIn", Boolean.TRUE);
+	    if ("paul".equals(login.getUserName()) &&
+	    model.addAttribute("login", new Login());
+	@RequestMapping(value="/login")
+	@RequestMapping(value="add-employee")
+	@RequestMapping(value="save-employee")
+	private static final Log logger = LogFactory.getLog(SaveProductController.class);
+	public String downloadResource(HttpSession session, HttpServletRequest request,
+                    FieldError fieldError = bindingResult.getFieldError();
+                    logger.info("has errors");
+                    logger.info("inputProduct called");
+                    logger.info("saveProduct called");
+                    multipartFile.transferTo(imageFile);
+                .andDo(print());
+                .andExpect(model().attributeExists("employee"))
+                .andExpect(status().isOk())
+                File imageFile = new File(servletRequest.getServletContext().getRealPath("/image"), fileName);
+                Files.copy(file, response.getOutputStream());
+                SaveProductAction saveProductAction = new SaveProductAction();
+                String fileName = multipartFile.getOriginalFilename();
+                dispatchUrl = "/jsp/ProductDetails.jsp";
+                dispatchUrl = "/jsp/ProductForm.jsp";
+                errors.add("Invalid price value");
+                errors.rejectValue("productionDate", "productionDate.invalid");
+                fileNames.add(fileName);
+                if (bindingResult.hasErrors()) {
+                new ClassPathXmlApplicationContext(new String[] {"spring-config.xml"});
+                product.setDescription(productForm.getDescription());
+                product.setName(productForm.getName());
+                product.setPrice(new BigDecimal(productForm.getPrice()));
+                redirect.append(":" + port);
+                saveProductAction.save(product);
+            HttpServletResponse response) throws Exception {
+            HttpSession session = request.getSession(true);
+            String sessionId = session.getId();
+            StringBuilder redirect = new StringBuilder();
+            errors.add("Product must have a name");
+            errors.add("Product must have a price");
+            errors.rejectValue("price", "price.negative");
+            for (MultipartFile multipartFile : files) {
+            if (port != 80) {
+            if (productionDate.isAfter(LocalDate.now())) {
+            int port = request.getLocalPort();
+            logger.debug("Code:" + fieldError.getCode() + ", field:" + fieldError.getField());
+            response.setContentType("application/pdf");
+            return LocalDate.parse(s, DateTimeFormatter.ofPattern(datePattern));
+        @PathVariable("spittleId") long spittleId, 
+        @RequestParam(value="count", defaultValue="20") int count) {
+        @RequestParam(value="max", defaultValue=MAX_LONG_AS_STRING) long max,
+        ApplicationContext context =
+        BufferedInputStream bis = new BufferedInputStream(fis);
+        FileInputStream fis = new FileInputStream(file);
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        List<MultipartFile> files = product.getImages();
+        List<String> errors = new ArrayList<>();
+        List<String> errors = productValidator.validate(productForm);
+        List<String> fileNames = new ArrayList<String>();
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        MockHttpServletResponse response = new MockHttpServletResponse();
+        OutputStream os = response.getOutputStream();
+        Path file = Paths.get(dataDirectory, "secret.pdf");
+        ProductValidator productValidator = new ProductValidator();
+        String dataDirectory = request.getServletContext().getRealPath("/WEB-INF/data");
+        String name = productForm.getName();
+        String price = productForm.getPrice();
+        System.out.println(date.format(formatter));
+        ValidationUtils.rejectIfEmpty(errors, "name", "productName.required");
+        ValidationUtils.rejectIfEmpty(errors, "price", "price.required");
+        ValidationUtils.rejectIfEmpty(errors, "productionDate", "productionDate.required");
+        assertEquals(200, response.getStatus());
+        bis.read(bytes);
+        byte[] bytes = new byte[bis.available()];
+        extends AbstractAnnotationConfigDispatcherServletInitializer {
+        formatter = DateTimeFormatter.ofPattern(datePattern);
+        if (Files.exists(file)) {
+        if (errors.isEmpty()) {
+        if (name == null || name.trim().isEmpty()) {
+        if (null != files && files.size() > 0) {
+        if (price != null && price.compareTo(BigDecimal.ZERO) < 0) {
+        if (price == null || price.trim().isEmpty()) {
+        if (session == null || session.getAttribute("loggedIn") == null) {
+        long newId = generator.incrementAndGet();
+        mockMvc.perform(get("/highest-paid/2"))
+        model.addAttribute("product", product);
+        os.write(bytes);
+        private ReadingListRepository readingListRepository;
+        product.setId(newId);
+        public ReadingListController(ReadingListRepository readingListRepository) {
+        request.setAttribute("errors", errors);
+        request.setAttribute("form", productForm);
+        request.setAttribute("product", product);
+        return "ProductDetails";
+        return "ProductForm";
+        return "redirect:/list-books";
+        return date.format(formatter);
+        return new ModelAndView("/WEB-INF/jsp/ProductDetails.jsp", "product", product);
+        return new ModelAndView("/WEB-INF/jsp/ProductForm.jsp");
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext).build();
+    @ExceptionHandler(value=RuntimeException.class)
+    @RequestMapping(value = "/edit-book/{id}")
+    @RequestMapping(value = "/input-book")
+    @RequestMapping(value = "/input-product")
+    @RequestMapping(value = "/list-books")
+    @RequestMapping(value = "/save-book")
+    @RequestMapping(value = "/save-product", method = RequestMethod.POST)
+    @RequestMapping(value = "/update-book")
+    @RequestMapping(value = "/view-product/{id}")
+    @RequestMapping(value="/", method="GET")
+    @RequestMapping(value="/{reader}", method=RequestMethod.GET)
+    @RequestMapping(value="/{reader}", method=RequestMethod.POST)
+    @RequestMapping(value="/{spittleId}", method=RequestMethod.GET)
+    @RequestMapping(value="/{username}", method=GET)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+    Spitter spitter = spitterRepository.findByUsername(username);
+    TilesConfigurer tiles = new TilesConfigurer();
+    messageSource.setBasename("file:///etc/spittr/messages");
+    messageSource.setBasename("messages");
+    model.addAttribute(spittleRepository.findOne(spittleId));
+    model.addAttribute(spittleRepository.findOne(spittleId));
+    private AtomicLong generator = new AtomicLong();
+    private DateTimeFormatter formatter;
+    private List<MultipartFile> images;
+    private MockMvc mockMvc;
+    private String datePattern;
+    private WebApplicationContext webAppContext;
+    public LocalDate convert(String s) {
+    public ModelAndView handleRequest(HttpServletRequest request,
+    public String home() {
+    public String inputProduct() {
+    public String print(LocalDate date, Locale locale) {
+    public String saveEmployee(@ModelAttribute Employee employee, BindingResult bindingResult, Model model) {
+    public String saveProduct(ProductForm productForm, Model model) {
+    public StringToLocalDateConverter(String datePattern) {
+    public ViewResolver viewResolver() {
+    resolver.setPrefix("/WEB-INF/views/");
+    resolver.setSuffix(".jsp");
+    return "redirect:/spittles";
+    return messageSource;
+    return new TilesViewResolver();
+    return tiles;
+    tiles.setDefinitions(new String[] {"/WEB-INF/**/tiles.xml"});
+    tiles.setDefinitions(new String[] {"/WEB-INF/layout/tiles.xml"});
+  public String showSpitterProfile(@PathVariable String username, Model model) {
+@ContextConfiguration("test-config.xml")
+@Import(DataConfig.class)
+@RequestMapping("/spitter")
+@RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
+@org.springframework.stereotype.Controller
+package controller;
+package domain;
+package service;
+public MessageSource messageSource() {
+public TilesConfigurer tilesConfigurer() {
+public ViewResolver viewResolver() {
+public class HomeController {
+public class InputProductController implements Controller {
+public class StringToLocalDateConverter implements Converter<String, LocalDate> {
+public interface SpitterRepository {
+  Spitter save(Spitter spitter);
+  Spitter findByUsername(String username);
+public class JdbcSpittleRepository implements SpittleRepository {
+  private static class SpittleRowMapper implements RowMapper<Spittle> {
+    public Spittle mapRow(ResultSet rs, int rowNum) throws SQLException {

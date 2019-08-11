@@ -1,0 +1,12 @@
+    <var name="order" class="com.springinaction.pizza.domain.Order"/>
+        <transition on="phoneEntered" to="lookupCustomer"/>
+    <action-state id="lookupCustomer">
+        <transition on="submit" to="addCustomer" />
+    <action-state id="addCustomer">
+    <view-state id="showOrder">
+        <transition on="createPizza" to="createPizza" />
+        <transition on="checkout" to="takePayment" />
+        <transition on="cancel" to="endState" />
+        <evaluate expression="pizzaFlowActions.addCustomer(order.customer)" />
+        <transition to="showOrder" />
+        <transition on="cancel" to="endState"/>

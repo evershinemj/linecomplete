@@ -1,0 +1,2 @@
+    <param-name>spring.profiles.default</param-name>
+    <param-value>dev</param-value>

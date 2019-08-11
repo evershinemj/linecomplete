@@ -1,0 +1,14 @@
+            PDFont font = PDType1Font.HELVETICA;
+            PDPage page = new PDPage();
+            PDPageContentStream contentStream = new PDPageContentStream(doc, page);
+            contentStream.setFont(font, fontSize);
+            contentStream.beginText();
+            contentStream.endText();
+            contentStream.close();
+            doc.save(path);
+            doc.close();
+            doc.addPage(page);
+            float fontSize = 12.0f;
+        PDDocument doc = null;
+    public static void createDocument(String path, String input) {
+public class PDFUtil {

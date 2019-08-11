@@ -1,0 +1,41 @@
+            <column name="ID"/>
+            <column name="NAME" not-null="true"/>
+            <generator class="increment"/>
+            <generator class="native"/>
+        <configuration configurationfile="${class.root}/hibernate.cfg.xml" />  
+        <id name="id">
+        <meta attribute="field-description">When the customer was registered</meta>
+        <property name="NAME">
+        <property name="address" column="ADDRESS" type="string"/>
+        <property name="birthday" column="BIRTHDAY" type="date"/>
+        <property name="description" column="DESCRIPTION" type="text"/>
+        <property name="email" column="email" type="string" not-null="true"/>
+        <property name="image" column="IMAGE" type="binary"/>
+        <property name="married" column="MARRIED" type="boolean"/>
+        <property name="name" access="field"/>
+        <property name="name" column="NAME" type="string" not-null="true"/>
+        <property name="password" column="PASSWORD" type="string" not-null="true"/>
+        <property name="phone" column="PHONE" type="int"/>
+        <property name="registeredTime" column="REGISTERED_TIME" type="timestamp"/>
+        <property name="sex" column="SEX" type="character"/>
+       org.hibernate.dialect.MySQLDialect
+      <column name="NAME" length="15" not-null="true" unique="true" />
+      <column name="REGISTERED_TIME" index="IDX_REGISTERED_TIME" sql-type="timestamp" />
+      <meta attribute="scope-set">private</meta>
+      <meta attribute="use-in-tostring">true</meta>
+      <taskdef name="hbm2javaTask" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="project.class.path"/>
+      com.mysql.jdbc.Driver
+    <class name="Customer" table="CUSTOMERS">
+    <meta attribute="class-description">
+    <meta attribute="class-scope">public</meta>
+   <hbm2ddl export="true" console="true" create="true"  drop="true" outputfilename="sampledb.sql" />
+  <hbm2ddlTask destdir = "${schema.dir}">
+<hibernate-mapping schema="schema1">
+<hibernate-mapping package="mypack">
+<mapping resource="mypack/Customer.hbm.xml" />
+<property name="connection.driver_class">
+<property name="connection.password">
+<property name="connection.url">
+<property name="connection.username">
+<property name="dialect">
+<property name="show_sql">true</property>

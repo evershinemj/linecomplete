@@ -1,0 +1,50 @@
+            .addClass(Customer.class)
+            .buildSessionFactory();
+            return qualifiedName.substring(qualifiedName.lastIndexOf(separator) + 1);
+            return unqualify(qualifiedName, ".");
+        Configuration config = new Configuration();
+            .setNamingStrategy(new MyNamingStrategy())
+        InputStream in = this.getClass().getResourceAsStream("photo.gif");
+        List customers = query.list();
+        Query query = session.createQuery("from Customer as c order by c.name asc");
+        Query query = session.createQuery("from Customer as c where c.name = 'TOM'");
+        Session session = getSession();
+        Session session = sessionFactory.openSession();
+        StringTokenizer stringTokenizer  = new StringTokenizer(name);
+        Transaction tx = null;
+        byte[] buffer = new byte[in.available()];
+        config.addClass(Customer.class);
+        customer.setImage(buffer);
+        firstName = stringTokenizer.nextToken();
+        in.read(buffer);
+        lastName = stringTokenizer.nextToken();
+        public static String unqualify(String qualifiedName) {
+        public static String unqualify(String qualifiedName, String separator) {
+        return  StringHelper.unqualify(className).toUpperCase() + 'S';
+        return propertyName.toUpperCase();
+        session.delete(customer);
+        session.save(customer);
+        sessionFactory = config.buildSessionFactory();
+        sessionFactory = new Configuration()
+        tx = session.beginTransaction();
+        tx.commit();
+        tx.rollback();
+    private Date birthday;
+    private Long id;
+    private String address;
+    private String description;
+    private String email;
+    private String name;
+    private String password;
+    private Timestamp registeredTime;
+    private boolean married;
+    private byte[] image;
+    private char sex;
+    private int phone;
+    public String columnName(String columnName) {
+    public String propertyToColumnName(String propertyName) {
+    public String propertyToTableName(String className, String propertyName) {
+    public String tableName(String tableName) {
+    public static SessionFactory sessionFactory;
+    public void test(ServletContext context, PrintWriter out) throws Exception{
+public class MyNamingStrategy extends ImprovedNamingStrategy {

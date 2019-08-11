@@ -1,0 +1,9 @@
+    <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="t" %>
+      <t:insertAttribute name="header" />
+      <t:insertAttribute name="body" />
+      <t:insertAttribute name="footer" />
+    <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+    <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+  <definition name="base" template="/WEB-INF/layout/page.jsp">
+  <definition name="home" extends="base">

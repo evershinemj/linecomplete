@@ -1,0 +1,11 @@
+        jp.proceed();
+    @AfterReturning("execution(** concert.Performance.perform(..))")
+    @AfterReturning("performance()")
+    @AfterThrowing("execution(** concert.Performance.perform(..))")
+    @AfterThrowing("performance()")
+        int i = (int) (Math.random() * criticismPool.length);
+    private String[] criticismPool;
+    @Before("execution(** concert.Performance.perform(..))")
+    @Before("performance()")
+    @Pointcut("execution(** concert.Performance.perform(..))")
+    public void watchPerformance(ProceedingJoinPoint jp) {

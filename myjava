@@ -1,0 +1,47 @@
+                    Collections.swap(list, i, j);
+            majorLogger.warning("QuickSort.sort(" + left.toString() + ")");
+            majorLogger.warning("QuickSort.sort(" + right.toString() + ")");
+                    Collections.swap(list, j, j + 1);
+                    Swap.swap(list.get(i), list.get(j));
+                    logger.info("called Collections.swap(list, i, j))");
+                Collections.swap(list, j, j - 1);
+                if (list.get(i) > list.get(j)) {
+                logger.info("called Collections.swap(list, j, j - 1)");
+            Collections.swap(list, leftIndex, pivotIndex);
+            Collections.swap(list, rightIndex, pivotIndex);
+            for (int j = 0; j < i; j++) {
+            for (int j = i + 1; j <= lastIndex; j++) {
+            leftIndex++;
+            pivotIndex = leftIndex;
+            pivotIndex = rightIndex;
+            rightIndex--;
+            while (j > 0 && list.get(j) < list.get(j - 1)) {
+        Logger logger = Logger.getLogger("mylogger");
+        QuickSort.list = list;        // this.list = list;
+        System.out.println(list);
+        compareTimes = 0;
+        for (int i = 0; i < lastIndex; i++) {
+        for (int i = lastIndex; i > 0; i--) {
+        if ((Integer) list.get(leftIndex) <= (Integer) pivot) {
+        if ((Integer) list.get(rightIndex) >= (Integer) pivot) {
+        int lastIndex = size - 1;
+        logger.setLevel(Level.ALL);
+        logger.setLevel(Level.CONFIG);
+        logger.setLevel(Level.INFO);
+        logger.setLevel(Level.OFF);
+        logger.setLevel(Level.SEVERE);
+        logger.setLevel(Level.WARNING);
+    private static List left;
+    private static List right;
+    private static Logger logger = Logger.getLogger("logger");
+    private static Logger majorLogger = Logger.getLogger("majorLogger");
+    private static Object pivot; 
+    private static int compareTimes = 0;
+    private static int leftIndex;
+    private static int pivotIndex;
+    private static int rightIndex;
+    private static int size;
+    private static void compareWithLeft() {
+    private static void compareWithRight() {
+    public static void sort(List list) {
+    public static void sort(List<Integer> list) {

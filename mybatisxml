@@ -1,0 +1,57 @@
+                create_time = #{createTime, jdbcType=TIMESTAMP}
+                head_img = #{headImg, jdbcType=BLOB},
+                user_name = #{userName},
+                user_password = #{userPassword},
+            #{createTime, jdbcType=TIMESTAMP})
+            #{id}, #{userName}, #{userPassword}, #{userEmail},
+            #{userInfo}, #{headImg, jdbcType=BLOB},
+            #{userName}, #{userPassword}, #{userEmail},
+            <if test="createTime != null">
+            <if test="headImg != null">
+            <if test="userInfo != null and userInfo != ''">
+            <if test="userPassword != null and userPassword != ''">
+            <property name="addRemarkComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="trimStrings" value="false"/>
+            <when test="id != null">
+            <when test="userName != null and userName != ''">
+            and user_email = #{userEmail}
+            and user_name like concat('%', #{userName}, '%')
+            create_time = #{createTime, jdbcType=TIMESTAMP}
+            head_img = #{headImg, jdbcType=BLOB},
+            id = #{id}
+            id, user_name, user_password, user_email, 
+            select * from sys_user where id = #{id}
+            user_email = #{userEmail},
+            user_info = #{userInfo},
+            user_info, head_img, create_time)
+            user_name, user_password, user_email, 
+            user_password = #{userPassword},
+            where id = #{id}
+        <id property="id" column="id"/>
+        <if test="userEmail != null and userEmail != ''">
+        <if test="userName != null and userName != ''">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="test.model" targetProject="src/main/java">
+        <mapper resource="tk/mybatis/simple/mapper/UserMapper.xml"/> 
+        <package name="tk.mybatis.simple.mapper"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="userName" column="user_name"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <sqlMapGenerator targetPackage="test.xml" targetProject="src/main/resources">
+        <trim prefix="SET" suffixOverrides=",">
+        SELECT LAST_INSERT_ID()
+        delete from sys_user where id = #{id}
+        insert into sys_user(
+        set user_name = #{userName},
+        update sys_user
+        where id = #{id}
+        <table tableName="%"/>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+    <delete id="deleteById">
+    <resultMap id="userMap" type="tk.mybatis.simple.model.SysUser">
+    <select id="selectAll" resultType="tk.mybatis.simple.model.SysUser"> 
+    <select id="selectById" resultMap="userMap">
+<mapper namespace="tk.mybatis.simple.mapper.UserMapper">

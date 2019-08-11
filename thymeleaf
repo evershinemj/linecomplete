@@ -1,0 +1,17 @@
+    (ISBN: <span th:text="${book.isbn}">ISBN</span>)
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+    <span th:if="${book.description eq null}">
+    <span th:text="${book.author}">Author</span>
+    <span th:text="${book.title}">Title</span> by 
+    <dl th:each="book : ${books}">
+        <dt class="bookHeadline">
+    <label for="title">Title:</label>
+    <label for="isbn">ISBN:</label>
+    <label for="author">Author:</label>
+    <label for="description">Description:</label><br/>
+        <input type="text" name="title" size="50"></input><br/>
+        <input type="text" name="author" size="50"></input><br/>
+        <input type="text" name="isbn" size="15"></input><br/>
+        <input type="submit"></input>
+    <span th:if="${book.description}" 
+          th:text="${book.description}">Description</span>

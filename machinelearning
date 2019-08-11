@@ -1,0 +1,24 @@
+            reducedFeatVec = featVec[:axis]     #chop out axis used for splitting
+        featList = [example[i] for example in dataSet]#create a list of all the examples of this feature
+            reducedFeatVec.extend(featVec[axis+1:])
+            retDataSet.append(reducedFeatVec)
+        currentLabel = featVec[-1]
+        if currentLabel not in labelCounts.keys(): labelCounts[currentLabel] = 0
+        if featVec[axis] == value:
+        labelCounts[currentLabel] += 1
+        prob = float(labelCounts[key])/numEntries
+        shannonEnt -= prob * log(prob,2) #log base 2
+    for featVec in dataSet:
+    for featVec in dataSet:
+    for key in labelCounts:
+    labelCounts = {}
+    labels = ['no surfacing','flippers']
+    numEntries = len(dataSet)
+    numFeatures = len(dataSet[0]) - 1      #the last column is used for the labels
+    retDataSet = []
+    return retDataSet
+    return shannonEnt
+    shannonEnt = 0.0
+def calcShannonEnt(dataSet):
+def createDataSet():
+def splitDataSet(dataSet, axis, value):

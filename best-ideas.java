@@ -1,0 +1,52 @@
+            fast = fast.next.next;
+            next = curr.next; curr.next = prev; // changes arrow direction
+            prev = curr; curr = next;
+            slow = slow.next;
+    return numPathStartingAtNode(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
+    return (root.val == sum ? 1 : 0) + numPathStartingAtNode(root.left, sum - root.val) + numPathStartingAtNode(root.right, sum - root.val);
+        ListNode curr = head;
+        ListNode next = null;
+        ListNode prev = null;
+        curr = next;
+        next = prev + curr;
+        prev = curr;
+        traverse(root.left, curr + 1);
+        traverse(root.right, curr + 1);
+    ArrayDeque<TreeNode> deque = new ArrayDeque<>(); // use deque as a queue
+    ListNode fast = head; // moves 2 ListNodes at a time
+    ListNode slow = head; // moves 1 ListNode  at a time
+    PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+    Queue<TreeNode> q = new LinkedList<>();
+    Stack<Integer> sumStack = new Stack<>();
+    Stack<TreeNode> stack = new Stack<>();
+    TreeNode curr = q.poll();
+    TreeNode tmp = queue.peek(); res.add(tmp.val);
+    boolean condition = ((n & maskLeft) == maskLeft) ^ ((n & maskRight) == maskRight);
+    boolean[] hasChar=new boolean[256];
+    boolean[][] isPalindrome = new boolean[n][n];
+    dp[i % 2] = dp[(i - 1) % 2] + dp[(i - 2) % 2];
+    dp[j] = Math.min(dp[j], dp[j+1])+ triangle.get(i).get(j);
+    head.next = prev;
+    helper(root, rst, new HashSet<>(), 0);
+    helper(root.left, rst, visitedDepth, depth+1);
+    helper(root.right, rst, visitedDepth, depth+1);
+    if(!set1.add(slice)) set2.add(slice);
+    if(level > output.size()) output.add(node.val);
+    int len1 = expandAroundCenter(s, i, i);
+    int len2 = expandAroundCenter(s, i, i + 1);
+    int maskLeft = 1 << 31 - i;
+    int maskRight = 1 << i;
+    int maxLen = 0, left = 0, right = 0;
+    int numNodesInLevel = deque.size();
+    isOdd = !isOdd;
+    num >>>= 4;
+    p[i][j] = s.charAt(i) == s.charAt(j) && p[i + 1][j - 1];
+    p[i][j] = s.charAt(i) == s.charAt(j);
+    q.offer(curr.left);
+    q.offer(curr.right);
+    res |= ((n >> i) & 1) << (31-i);
+    return Math.max(helper(nums, 0, nums.length - 2), helper(nums, 1, nums.length - 1));
+    return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+    sumStack.push(currSum - curr.left.val);
+    sumStack.push(currSum - curr.right.val);
+    sumStack.push(sum - root.val);

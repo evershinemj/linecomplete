@@ -1,0 +1,5 @@
+    assertThat("chocolate chips", theBiscuit.getChocolateChipCount(), equalTo(10));
+    assertThat("hazelnuts", theBiscuit.getHazelnutCount(), equalTo(3));
+    assertThat(theBiscuit, equalTo(myBiscuit)); 
+    assertThat(theBiscuit, is(myBiscuit)); 
+    assertThat(theBiscuit, is(equalTo(myBiscuit))); 

@@ -1,0 +1,27 @@
+            Order order = (Order) iterator.next();
+            if (order.getOrderNumber() == null) {
+        Class.forName("com.mysql.jdbc.Driver");
+        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+        Connection conn = null;
+        Iterator iterator = customer.getOrders().iterator();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Statement stmt = null;
+        conn = getConnection();
+        conn.commit();
+        conn.rollback();
+        customer.setAge(rs.getInt(3));
+        customer.setId(new Long(rs.getLong(1)));
+        customer.setName(rs.getString(2));
+        return java.sql.DriverManager.getConnection(dbUrl, dbUser, dbPwd);
+        rs = stmt.executeQuery();
+        stmt = conn.PreparedStatement(
+        stmt.execute();
+        stmt.setDouble(
+        stmt.setLong(
+        stmt.setString(
+        while (iterator.hasNext()) {
+    private String dbPwd = "1234";
+    private String dbUrl = "jdbc:mysql://localhost/3306/SAMPLEDB";
+    private String dbUser = "root";
+    public Connection getConnection() throws Exception{

@@ -1,0 +1,3 @@
+        SpringApplication.run(Application.class, args);
+public class Application  extends SpringBootServletInitializer implements WebApplicationInitializer {
+@SpringApplicationConfiguration(classes = 
